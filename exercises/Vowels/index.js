@@ -10,7 +10,15 @@
  */
 
 function vowels(string) {
+  let count = 0;
 
+  string.toLowerCase().split('').forEach(char => {
+    if (['a', 'e', 'i', 'o', 'u'].includes(char)) {
+      count++;
+    }
+  });
+
+  return count;
 }
 
 module.exports = vowels;

@@ -13,7 +13,23 @@
  */
 
 function chunk(array, size) {
+  const result = [];
+  let subset = [];
+  let j = 0;
 
+  for (let i = 0; i < array.length; i++, j++) {
+    subset.push(array[i]);
+
+    if (i === array.length - 1) {
+      result.push(subset);
+    } else if (j === size - 1) {
+      result.push(subset);
+      subset = [];
+      j = 0;
+    }
+  }
+
+  return result;
 }
 
 module.exports = chunk;

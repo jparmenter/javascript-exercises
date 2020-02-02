@@ -13,7 +13,14 @@
 */
 
 function longestWord(sen) {
+  const words = sen.split(' ').map(word => word.replace(/\W/g, ''));
 
+  return words.reduce((result, word) => {
+    if (word.length > result.length) {
+      result = word;
+    }
+    return result
+  });
 }
 
 module.exports = longestWord;

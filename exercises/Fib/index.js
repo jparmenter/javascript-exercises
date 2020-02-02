@@ -12,7 +12,16 @@
  */
 
 function fib(n) {
+  let previousValue = 0;
+  let result = 1;
 
+  for (let i = 1; i < n; i++) {
+    let newResult = result + previousValue;
+    previousValue = result;
+    result = newResult;
+  }
+
+  return result;
 }
 
 module.exports = fib;
